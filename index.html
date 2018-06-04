@@ -234,6 +234,232 @@
             
               
                 
+                <a class="post-title-link" href="/2018/06/04/每天坚持写一篇学习总结-md/" itemprop="url">
+                  每天坚持写一篇学习总结.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-06-04T21:09:43+08:00" content="2018-06-04">
+              2018-06-04
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="生命不息学习不止"><a href="#生命不息学习不止" class="headerlink" title="生命不息学习不止"></a>生命不息学习不止</h1><p>每天都是一个学习的过程，学习不能停止，今天复习了JavaScript的知识点，接下来要对今天的学习做个总结</p>
+<h2 id="JavaScript基础应用"><a href="#JavaScript基础应用" class="headerlink" title="JavaScript基础应用"></a>JavaScript基础应用</h2><p>match() 方法可以在字符串中检索指定的值，或找到一个或多个正则表达式的匹配</p>
+<p>isNaN()判断是不是非数</p>
+<p>变量是用于存储信息的容器</p>
+<p>变量声明了但是没有赋值其值是undefined</p>
+<p>可以通过将变量设置为空来清空变量</p>
+<h2 id="JS基本数据类型"><a href="#JS基本数据类型" class="headerlink" title="JS基本数据类型"></a>JS基本数据类型</h2><p>Undefined,Null,Boolean,Number,String ECMAScript 2015新增：Symbol(创建后独一无二且不可变的数据类型)<br>object是JavaScript中所有对象的父对象</p>
+<h2 id="JavaScript原型和原型链"><a href="#JavaScript原型和原型链" class="headerlink" title="JavaScript原型和原型链"></a>JavaScript原型和原型链</h2><p>每个对象都会在内部初始化一个属性就是prototype（原型），当我们访问一个对象的属性时如果这个对象内部不存在这个属性他就会去prototype里去寻找这个属性，这个prototype又会有自己的prototype这样一直找下去就是原型链的概念</p>
+<p>关系：instance.constructor.prototype=instance.<em>proto</em></p>
+<p>JavaScript对象是通过引用来传递的，我们创建的每个新对象实体中并没有一份属于自己的原型副本。当我们修改原型时，与之相关的对象也会继承这一改变。当我们需要一个属性的时，Javascript引擎会先看当前对象中是否有这个属性， 如果没有的话，就会查找他的Prototype对象是否有这个属性，如此递推下去，一直检索到 Object 内建对象</p>
+<h2 id="JavaScript如何实现继承"><a href="#JavaScript如何实现继承" class="headerlink" title="JavaScript如何实现继承"></a>JavaScript如何实现继承</h2><p>1，构造函数继承 2，原型继承，3，实例继承，4，拷贝继承</p>
+<h2 id="this的理解"><a href="#this的理解" class="headerlink" title="this的理解"></a>this的理解</h2><p>this总是指向函数的直接调用者（而非间接调用者）；<br>如果有new关键字，this指向new出来的那个对象；在事件中，this指向触发这个事件的对象，特殊的是，IE中的attachEvent中的this总是指向全局对象Window；</p>
+<h2 id="null和undefined的区别"><a href="#null和undefined的区别" class="headerlink" title="null和undefined的区别"></a>null和undefined的区别</h2><p>null 表示一个对象是没有值的值，也就是值为空</p>
+<p>undefined 表示变量声明了没有初始化未赋值的变量默认undefined</p>
+<p>undefined不是一个有效的JSON，而null是</p>
+<p>undefined的类型（typeof）是undefined  null的类型是object；</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>闭包是指有权访问另一个函数作用域中变量的函数，创建闭包最常见的方法就是在一个函数中创建另一个函数，通过另一个函数访问这个函数</p>
+<p>闭包的特征</p>
+<p>1，函数内在嵌套函数</p>
+<p>2，内部函数可以引用外层的参数和变量</p>
+<p>3，参数和变量不会被垃圾回收机制回收</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>ajax的全称：Asynchronous Javascript And XML。<br> 异步传输+js+xml。</p>
+<p> 所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果它自己会根据设定进行后续操作，与此同时，页面是不会发生整页刷新的，提高了用户体验。</p>
+<p> (1)创建XMLHttpRequest对象,也就是创建一个异步调用对象</p>
+<p> (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息</p>
+<p> (3)设置响应HTTP请求状态变化的函数</p>
+<p> (4)发送HTTP请求</p>
+<p> (5)获取异步调用返回的数据</p>
+<p> (6)使用JavaScript和DOM实现局部刷新</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/06/03/1/" itemprop="url">
+                  Untitled
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-06-03T23:22:17+08:00" content="2018-06-03">
+              2018-06-03
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/06/03/搭建博客心得-md/" itemprop="url">
                   搭建博客心得.md
                 </a>
@@ -452,7 +678,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
