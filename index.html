@@ -234,6 +234,140 @@
             
               
                 
+                <a class="post-title-link" href="/2018/06/11/Vue-js总结-md/" itemprop="url">
+                  Vue.js总结.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-06-11T21:21:09+08:00" content="2018-06-11">
+              2018-06-11
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/06/11/Vue-js总结-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/11/Vue-js总结-md/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Vue-js"><a href="#Vue-js" class="headerlink" title="Vue.js"></a>Vue.js</h1><h2 id="搭建环境与运行项目"><a href="#搭建环境与运行项目" class="headerlink" title="搭建环境与运行项目"></a>搭建环境与运行项目</h2><p>1, 想要运行一个vue项目首先需要安装git和node.js，node和git都是下载安装包直接下一步下一步安装就可以，记得如果这两个软件安装好后如果给他们改变了位置记得要从新配置环境变量啊。<br>2,然后安装 vue-cli </p>
+<pre><code>npm install -g vue-cli  
+</code></pre><p>3,在你系统的某个盘里创建一个文件夹，为了存放以后你的vue项目代码我创建的是vue_gh，创建一个test项目 运行命令  </p>
+<pre><code>vue init webpack test
+</code></pre><p>运行时一路回车等他结束会发现vue-gh文件夹中多了一个test文件夹<br>4，在dos命令行中进入项目文件夹  </p>
+<pre><code>cd vue-gh/test
+</code></pre><p>5,安装依赖包  </p>
+<pre><code>npm install 
+</code></pre><p>6,启动项目  </p>
+<pre><code>npm run dev
+</code></pre><h2 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h2><p>一个组件从开始到消亡所经历的各种状态，就是一个组件的生命周期。共有八大生命周期，创建前/后,加载前/后，更新前/后，销毁前/后。<br>实例化一个vue对象</p>
+<pre><code>let app = new Vue({})  
+</code></pre><p>把新建的vue实例挂载到一个dom上</p>
+<pre><code>let app=new Vue({
+    el:&apos;#app&apos;
+})
+</code></pre><p>这个#app元素是html中的DOM元素</p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+</code></pre><p>vue实例中的所有东西都将在这个#app中显示<br>3，给vue实例中设置数据data</p>
+<pre><code>let app=new Vue({
+    el:&apos;#app&apos;,
+    Data(){
+        return{
+            name:&apos;xiaoxiao&apos;
+        }
+    }
+})
+</code></pre><p>4,到这一步vue实例已经挂载到#app的dom元素上，数据data也有了，最后需要将vue实例中的数据绑定到试图上，也就是数据渲染。  </p>
+<pre><code>&lt;div id=&quot;app&quot;&gt;
+&lt;h1&gt;hello {{name}}&lt;/h1&gt;
+&lt;/div&gt;
+</code></pre>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/06/11/Vue-js总结-md/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/06/09/es6总结-md/" itemprop="url">
                   es6总结.md
                 </a>
@@ -807,7 +941,7 @@ b //1
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

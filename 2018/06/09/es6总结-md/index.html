@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="ES6的学习总结ECMAScript6简介ES6是JavaScript语言的下一代标准，他的目标是使JavaScript能够编写复杂的大型应用程序成为企业级开发语言。ES6是JavaScript的一种规格，JavaScript是ES6的一种实现 let和const命令ES6新增了let命令，用来声明变量，用法类似于var，但是所声明的变量只能在let命令所在的代码块内有效   {let a=5;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-09T16:12:24.670Z">
+<meta property="og:updated_time" content="2018-06-11T16:17:45.694Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6总结.md">
 <meta name="twitter:description" content="ES6的学习总结ECMAScript6简介ES6是JavaScript语言的下一代标准，他的目标是使JavaScript能够编写复杂的大型应用程序成为企业级开发语言。ES6是JavaScript的一种规格，JavaScript是ES6的一种实现 let和const命令ES6新增了let命令，用来声明变量，用法类似于var，但是所声明的变量只能在let命令所在的代码块内有效   {let a=5;">
@@ -337,8 +337,34 @@ client.setRequestHeader(&quot;Accept&quot;, &quot;application/json&quot;);
 client.send();
 
 });
-</code></pre><p>   return promise;<br>   };</p>
-<p>   getJSON(“/posts.json”).then(function(json) {<br>   console.log(‘Contents: ‘ + json);<br>   }, function(error) {<br>   console.error(‘出错了’, error);<br>   });</p>
+return promise;
+};
+getJSON(&quot;/posts.json&quot;).then(function(json) {
+console.log(&apos;Contents: &apos; + json);
+}, function(error) {
+console.error(&apos;出错了&apos;, error);
+});
+</code></pre><h2 id="Generator函数"><a href="#Generator函数" class="headerlink" title="Generator函数"></a>Generator函数</h2><p>Generator是ES6提供的一种异步编程解决方案，是一个状态机，封装了多个内部状态。函数的两个特征：function关键字和函数名之间有一个<em>；函数内部使用yield表达式，定义不同的内部状态。<br>    function</em> helloworldGenerator(){<br>        yield ‘hello’;<br>        yield ‘world’;<br>        return ‘ending’;<br>    }<br>    var hw = helloworldGenerator();<br>    hw.next()//{value:’hello’,done:false}<br>    hw.next()//{value:’world’,done:false}<br>    hw.next()//{value:’ending’,done:tue}<br>    hw.next()//{value:undefined,done:true}<br>Generator 函数的调用方法与普通函数一样，也是在函数名后面加上一对圆括号。不同的是，调用 Generator 函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象下一步，必须调用遍历器对象的next方法，使得指针移向下一个状态。也就是说，每次调用next方法，内部指针就从函数头部或上一次停下来的地方开始执行，直到遇到下一个yield表达式（或return语句）为止。换言之，Generator 函数是分段执行的，yield表达式是暂停执行的标记，而next方法可以恢复执行.  </p>
+<h3 id="yield表达式"><a href="#yield表达式" class="headerlink" title="yield表达式"></a>yield表达式</h3><p>由于 Generator 函数返回的遍历器对象，只有调用next方法才会遍历下一个内部状态，所以其实提供了一种可以暂停执行的函数。yield表达式就是暂停标志。遇到yield表达式就暂停后面的操作，并返回紧跟着value表达式后面的value值，下次调用next方法时继续往下执行知道遇到下一个yield表达式，如果没有遇到则返回对象的value属性值为undefined。  </p>
+<h3 id="与Iterator接口的关系"><a href="#与Iterator接口的关系" class="headerlink" title="与Iterator接口的关系"></a>与Iterator接口的关系</h3><p>由于Generator函数就是遍历器生成函数，因此可以把Generator赋值给对象的Symbol.iterator属性，从而使得该对象具有Iterator接口  </p>
+<pre><code>var myIterable = {};
+myIterable[Symbol.iterator] = function* () {
+yield 1;
+yield 2;
+yield 3;
+};
+[...myIterable] // [1, 2, 3]  
+</code></pre><p>上面代码中，Generator 函数赋值 Symbol.iterator属性，从而使得myIterable对象具有了 Iterator 接口，可以被…运算符遍历了 </p>
+<h2 id="Generator函数的异步"><a href="#Generator函数的异步" class="headerlink" title="Generator函数的异步"></a>Generator函数的异步</h2><p>异步对JavaScript语言太重要，因为Js语言执行的是单线程，如果没有异步根本没办法用会卡死<br>异步编程的方法大概有以下四种  </p>
+<ol>
+<li>回掉函数</li>
+<li>事件监听</li>
+<li>发布或订阅</li>
+<li><p>Promise对象 </p>
+<h2 id="async函数"><a href="#async函数" class="headerlink" title="async函数"></a>async函数</h2><p>使得异步操作变得更加方便，他就是Generator函数的语法糖<br>async函数就是将Generator函数的*号替换成async将yield替换成await<br>async函数返回一个 Promise 对象，可以使用then方法添加回调函数。当函数执行的时候，一旦遇到await就会先返回，等到异步操作完成，再接着执行函数体内后面的语句  </p>
+<p> async function getStockPriceByName(name) {<br> const symbol = await getStockSymbol(name);<br> const stockPrice = await getStockPrice(symbol);<br> return stockPrice;<br> }<br> getStockPriceByName(‘goog’).then(function (result) {<br> console.log(result);<br> });<br>上面代码是一个获取股票报价的函数，函数前面的async关键字，表明该函数内部有异步操作。调用该函数时，会立即返回一个Promise对象</p>
+</li>
+</ol>
 
       
     </div>
@@ -370,6 +396,10 @@ client.send();
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/11/Vue-js总结-md/" rel="prev" title="Vue.js总结.md">
+                Vue.js总结.md <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -444,7 +474,7 @@ client.send();
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -476,7 +506,7 @@ client.send();
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6的学习总结"><span class="nav-number">1.</span> <span class="nav-text">ES6的学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript6简介"><span class="nav-number">1.1.</span> <span class="nav-text">ECMAScript6简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let和const命令"><span class="nav-number">1.2.</span> <span class="nav-text">let和const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6变量声明的六种方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">ES6变量声明的六种方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">1.3.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set和Map数据结构"><span class="nav-number">1.4.</span> <span class="nav-text">Set和Map数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise对象"><span class="nav-number">1.5.</span> <span class="nav-text">Promise对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">1.5.1.</span> <span class="nav-text">基本用法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ES6的学习总结"><span class="nav-number">1.</span> <span class="nav-text">ES6的学习总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript6简介"><span class="nav-number">1.1.</span> <span class="nav-text">ECMAScript6简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#let和const命令"><span class="nav-number">1.2.</span> <span class="nav-text">let和const命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6变量声明的六种方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">ES6变量声明的六种方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symbol"><span class="nav-number">1.3.</span> <span class="nav-text">Symbol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set和Map数据结构"><span class="nav-number">1.4.</span> <span class="nav-text">Set和Map数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise对象"><span class="nav-number">1.5.</span> <span class="nav-text">Promise对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">1.5.1.</span> <span class="nav-text">基本用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generator函数"><span class="nav-number">1.6.</span> <span class="nav-text">Generator函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#yield表达式"><span class="nav-number">1.6.1.</span> <span class="nav-text">yield表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#与Iterator接口的关系"><span class="nav-number">1.6.2.</span> <span class="nav-text">与Iterator接口的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generator函数的异步"><span class="nav-number">1.7.</span> <span class="nav-text">Generator函数的异步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#async函数"><span class="nav-number">1.8.</span> <span class="nav-text">async函数</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
