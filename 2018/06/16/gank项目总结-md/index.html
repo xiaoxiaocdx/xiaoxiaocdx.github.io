@@ -1,0 +1,593 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="gank项目总结项目名称：gank手机端项目 项目搭建与运行1，运用vue-cli脚手架搭建项目   npm install -g vue-cli vue init webpack vue-sample   2，安装依赖包  npm install stylus --save npm install stylus-loader --save npm install vue-resource --s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gank项目总结.md">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/gank项目总结-md/index.html">
+<meta property="og:site_name" content="My Blog">
+<meta property="og:description" content="gank项目总结项目名称：gank手机端项目 项目搭建与运行1，运用vue-cli脚手架搭建项目   npm install -g vue-cli vue init webpack vue-sample   2，安装依赖包  npm install stylus --save npm install stylus-loader --save npm install vue-resource --s">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-16T14:07:48.612Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="gank项目总结.md">
+<meta name="twitter:description" content="gank项目总结项目名称：gank手机端项目 项目搭建与运行1，运用vue-cli脚手架搭建项目   npm install -g vue-cli vue init webpack vue-sample   2，安装依赖包  npm install stylus --save npm install stylus-loader --save npm install vue-resource --s">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> gank项目总结.md | My Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">My Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">to be continued...</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                gank项目总结.md
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-06-16T16:45:57+08:00" content="2018-06-16">
+              2018-06-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/06/16/gank项目总结-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/16/gank项目总结-md/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="gank项目总结"><a href="#gank项目总结" class="headerlink" title="gank项目总结"></a>gank项目总结</h1><p>项目名称：gank手机端项目</p>
+<h2 id="项目搭建与运行"><a href="#项目搭建与运行" class="headerlink" title="项目搭建与运行"></a>项目搭建与运行</h2><p>1，运用vue-cli脚手架搭建项目  </p>
+<pre><code>npm install -g vue-cli
+vue init webpack vue-sample  
+</code></pre><p>2，安装依赖包 </p>
+<pre><code>npm install stylus --save
+npm install stylus-loader --save
+npm install vue-resource --save
+npm install vuex --save
+</code></pre><p>3,运行项目 </p>
+<pre><code>npm run dev
+</code></pre><h2 id="项目文件夹结构及用途"><a href="#项目文件夹结构及用途" class="headerlink" title="项目文件夹结构及用途"></a>项目文件夹结构及用途</h2><p>config—-配置信息<br>dist—-编译后的项目代码<br>src—-项目源码<br>   asseets—存放项目图片<br>   common—存放公共组件<br>   components—存放组件<br>   route—路由<br>App.vue—-跟组件</p>
+<h2 id="vue页面结构"><a href="#vue页面结构" class="headerlink" title="vue页面结构"></a>vue页面结构</h2><p>一个.vue文件包含三部分  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  //页面渲染引用组件部分，相当于HTML的内容</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  javascript部分，定义组件以及定义函数的方法</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  定义页面样式</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="项目思路以及框架搭建"><a href="#项目思路以及框架搭建" class="headerlink" title="项目思路以及框架搭建"></a>项目思路以及框架搭建</h2><p>要想写一个完整的项目首先需要把项目的整体框架搭建出来，然后再一点一点的往页面里面填充东西，这样一步一步的进行，当哪一点遇到问题时可以很容易的找到。<br>我写的这个gank项目只有三个页面，整体思路是一个标题栏（header），标题栏有一个图标点击一下会出现一个弹窗，标题栏下面时菜单栏（menu）,菜单栏的内容有 福利，Android，ios，下面就是这三个页面<br>因为不管点击那个页面标题栏和菜单栏都会出现，所以把他们两个设置成公共组件  </p>
+<h2 id="项目运行过程"><a href="#项目运行过程" class="headerlink" title="项目运行过程"></a>项目运行过程</h2><h3 id="header部分"><a href="#header部分" class="headerlink" title="header部分"></a>header部分</h3><p>  先搭写一个简单的headerheader框架<br>  Header.vue<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">   &lt;div class=&quot;header&quot;&gt;header&lt;/div&gt;</span><br><span class="line">&lt;/template&gt; </span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">    name: header</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt; </span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.header &#123;</span><br><span class="line">    height: 50px;</span><br><span class="line">    width: 100%</span><br><span class="line">    background: red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>  这样一个简单的header框架就写好了，如果想让header显示在页面上，只需要在 App.vue中引用就可以了<br>  在App.vue中输入以下代码就可以把header 渲染在页面上<br>    App.vue<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;app-header&gt; &lt;/app-header&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import header from &apos;./components/header/Header&apos;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;App&quot;,</span><br><span class="line">  components: &#123;</span><br><span class="line">   &apos;app-header&apos;: header</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样一个header组件就能显示到页面上了<br>export default { } 与 new Vue ({ })<br>new vue({}) 是为了实例化，创建一个Vue的实例 就是相当于创建一个根组件；<br>而export default {}是导出模块,供其他模块进行调用。一般都是导出一个组件，然后去父组件中定义引入就能使用</p>
+<h3 id="menu部分"><a href="#menu部分" class="headerlink" title="menu部分"></a>menu部分</h3><p>menu部分要实现点击菜单栏自动切换的功能，<br>我自己定义了一个handelMenu方法，给菜单添加点击事件绑定该方法<br><figure class="highlight plain"><figcaption><span>(val) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">  this.$store.dispatch(type.HANDEL_CHANGE, &#123;</span><br><span class="line">    selected: val</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>type.HANDEL_CHANGE在common.js的mutations里面</p>
+<h3 id="页面部分"><a href="#页面部分" class="headerlink" title="页面部分"></a>页面部分</h3><p>页面中数据的获取都是来自于 <a href="https://gank.io/api/data/福利/10/${this.page}" target="_blank" rel="noopener">https://gank.io/api/data/福利/10/${this.page}</a><br>页面中主要是先把页面的布局整好然后写一个方法去获取数据<br>this.$http.get(<code>https://gank.io/api/data/福利/10/${this.page}</code>).then((response) =&gt; {}获取数据<br>获取到的数据用v-for指令渲染到页面上，v-for渲染的话必须在其父元素中进行渲染 </p>
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><p>v-for指令根据一组数组的列表进行渲染v-for item in items,item是自己起的名，items是源数组<br><figure class="highlight plain"><figcaption><span>id</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">  &lt;li v-for=&quot;item in items&quot;&gt;</span><br><span class="line">    &#123;&#123; item.message &#125;&#125;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line"></span><br><span class="line">var example1 = new Vue(&#123;</span><br><span class="line">  el: &apos;#example-1&apos;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    items: [</span><br><span class="line">      &#123; message: &apos;Foo&apos; &#125;,</span><br><span class="line">      &#123; message: &apos;Bar&apos; &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="弹窗"><a href="#弹窗" class="headerlink" title="弹窗"></a>弹窗</h3><p>弹窗使用vuex 数据流切换 用v-on给弹窗添加点击事件<br>当点击弹窗按钮时执行showDialog()方法，show方法的值先设置为false意为隐藏，当点击时值编程true显示出来<br><figure class="highlight plain"><figcaption><span>(state) &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">  state.dialog.show = !state.dialog.show</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##项目感想<br>这是我写的第一个简单的vue项目，通过对Es6和vue官方文档的了解，写了这个简单的项目，通过写这个项目还是有很多感触的，让我对vue框架又有了深层次的了解，如果只看文档和书不去练习想学好编程是不然容易的但是如果不看书和文档写项目又没有头绪，所以一定不要急于求成，只有一步一步的走下去才能走得更远。<br>.vue文件中文档规范要求的特别严格，一个空格或一个空行都可能引发错误，所以写的时候一定要细心,写项目中遇到了很多问题通过Google搜索和询问同学来解决问题。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/11/Vue-js总结-md/" rel="next" title="Vue.js总结.md">
+                <i class="fa fa-chevron-left"></i> Vue.js总结.md
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Liu xiaoxiao" />
+          <p class="site-author-name" itemprop="name">Liu xiaoxiao</p>
+          <p class="site-description motion-element" itemprop="description">My blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gank项目总结"><span class="nav-number">1.</span> <span class="nav-text">gank项目总结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目搭建与运行"><span class="nav-number">1.1.</span> <span class="nav-text">项目搭建与运行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目文件夹结构及用途"><span class="nav-number">1.2.</span> <span class="nav-text">项目文件夹结构及用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue页面结构"><span class="nav-number">1.3.</span> <span class="nav-text">vue页面结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目思路以及框架搭建"><span class="nav-number">1.4.</span> <span class="nav-text">项目思路以及框架搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目运行过程"><span class="nav-number">1.5.</span> <span class="nav-text">项目运行过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#header部分"><span class="nav-number">1.5.1.</span> <span class="nav-text">header部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#menu部分"><span class="nav-number">1.5.2.</span> <span class="nav-text">menu部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#页面部分"><span class="nav-number">1.5.3.</span> <span class="nav-text">页面部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for"><span class="nav-number">1.5.4.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#弹窗"><span class="nav-number">1.5.5.</span> <span class="nav-text">弹窗</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu xiaoxiao</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'liuxiaoxiao';
+      var disqus_identifier = '2018/06/16/gank项目总结-md/';
+      var disqus_title = 'gank项目总结.md';
+      var disqus_url = 'http://yoursite.com/2018/06/16/gank项目总结-md/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
