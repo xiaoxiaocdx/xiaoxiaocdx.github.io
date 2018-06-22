@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="My Blog">
 <meta property="og:description" content="Vue.js搭建环境与运行项目1, 想要运行一个vue项目首先需要安装git和node.js，node和git都是下载安装包直接下一步下一步安装就可以，记得如果这两个软件安装好后如果给他们改变了位置记得要从新配置环境变量啊。2,然后安装 vue-cli  npm install -g vue-cli   3,在你系统的某个盘里创建一个文件夹，为了存放以后你的vue项目代码我创建的是vue_gh，创">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-11T16:17:42.398Z">
+<meta property="og:updated_time" content="2018-06-21T10:45:19.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue.js总结.md">
 <meta name="twitter:description" content="Vue.js搭建环境与运行项目1, 想要运行一个vue项目首先需要安装git和node.js，node和git都是下载安装包直接下一步下一步安装就可以，记得如果这两个软件安装好后如果给他们改变了位置记得要从新配置环境变量啊。2,然后安装 vue-cli  npm install -g vue-cli   3,在你系统的某个盘里创建一个文件夹，为了存放以后你的vue项目代码我创建的是vue_gh，创">
@@ -289,7 +289,8 @@
 <pre><code>npm install 
 </code></pre><p>6,启动项目  </p>
 <pre><code>npm run dev
-</code></pre><h2 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h2><p>一个组件从开始到消亡所经历的各种状态，就是一个组件的生命周期。共有八大生命周期，创建前/后,加载前/后，更新前/后，销毁前/后。<br>实例化一个vue对象</p>
+</code></pre><p>vue.js的核心是允许采用简介的模板语法来声明式地将数据渲染进Dom的系统</p>
+<h2 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h2><p>一个组件从开始到消亡所经历的各种状态，就是一个组件的生命周期。共有八大生命周期，创建前/后,加载前/后，更新前/后，销毁前/后。<br>实例化一个vue对象</p>
 <pre><code>let app = new Vue({})  
 </code></pre><p>把新建的vue实例挂载到一个dom上</p>
 <pre><code>let app=new Vue({
@@ -326,7 +327,13 @@ v-if: 条件渲染。根据表达式的值的真假条件，销毁或重建元�
 v-show: 条件渲染 根据条件表达式的真假值，切换元素的display CSS属性
 v-pre: 跳过这个元素和它的子元素的编译过程。可以用来显示原始 Mustache 标签。跳过大量没有指令的节点会加快编译
 v-once:只渲染元素和组件一次。随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。这可以用于优化更新性能
-</code></pre><h2 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h2>
+</code></pre><p>v-if是一个指令，所以必须将他添加到一个元素上，v-else必须紧跟着v-if或者v-else-if<br>vue会尽可能高效的渲染元素，通常会复用已有元素而不是从头开始渲染，这样做可以使vue变得非常快，下面例子是允许用户在不同的登陆方式之间切换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-if=&quot;loginType === &apos;username&apos;&quot;&gt;</span><br><span class="line">  &lt;label&gt;Username&lt;/label&gt;</span><br><span class="line">  &lt;input placeholder=&quot;Enter your username&quot;&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;template v-else&gt;</span><br><span class="line">  &lt;label&gt;Email&lt;/label&gt;</span><br><span class="line">  &lt;input placeholder=&quot;Enter your email address&quot;&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<p>v-show的属性始终会被渲染并保留在Dom中，v-show只是简单的切换元素的css属性display<br>v-for 指令根据一组数组的选项列表进行渲染，v-for指令需要使用item in items 形式的特殊语法，items是源数据数组并且item是数组元素迭代的别名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">html代码</span><br><span class="line">&lt;ul id=&quot;example-1&quot;&gt;</span><br><span class="line">  &lt;li v-for=&quot;item in items&quot;&gt;</span><br><span class="line">    &#123;&#123; item.message&#125;&#125;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">script代码</span><br><span class="line">var example = new Vue(&#123;</span><br><span class="line">    el: &apos;#example-1&apos;</span><br><span class="line">    data: &#123;</span><br><span class="line">      items: [</span><br><span class="line">       &#123; message: &apos;Foo&apos;&#125;,</span><br><span class="line">       &#123; message: &apos;Bar&apos;&#125; </span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>v-on指令监听Dom事件并在触法时运行一些JavaScript代码<br>v-model指令在表单<input>以及<textarea>元素上创建双向数据绑定，他会根据控件类型自动选取正确的方法来更新元素，他负责监听用户的输入事件以更新数据，并对一些极端场景进行特殊处理</textarea></p>
+<h2 id="钩子函数"><a href="#钩子函数" class="headerlink" title="钩子函数"></a>钩子函数</h2><h2 id="class与style绑定"><a href="#class与style绑定" class="headerlink" title="class与style绑定"></a>class与style绑定</h2><p>可以给 v-bind:class一个对象以动态地切换class;  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:class=&quot;&#123;active: isActive&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>上面语法表示active这个class存在与否取决于数据属性 isActive的truthiness<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;static&quot;v-bind:class=&quot;&#123; active: isActive, &apos;text-danger&apos;: hasError &#125;&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">  isActive: true,</span><br><span class="line">  hasError: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
 
@@ -467,7 +474,7 @@ v-once:只渲染元素和组件一次。随后的重新渲染，元素/组件及
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-js"><span class="nav-number">1.</span> <span class="nav-text">Vue.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建环境与运行项目"><span class="nav-number">1.1.</span> <span class="nav-text">搭建环境与运行项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue生命周期"><span class="nav-number">1.2.</span> <span class="nav-text">Vue生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM模式"><span class="nav-number">1.3.</span> <span class="nav-text">MVVM模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue指令"><span class="nav-number">1.4.</span> <span class="nav-text">vue指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#钩子函数"><span class="nav-number">1.5.</span> <span class="nav-text">钩子函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-js"><span class="nav-number">1.</span> <span class="nav-text">Vue.js</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建环境与运行项目"><span class="nav-number">1.1.</span> <span class="nav-text">搭建环境与运行项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vue生命周期"><span class="nav-number">1.2.</span> <span class="nav-text">Vue生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MVVM模式"><span class="nav-number">1.3.</span> <span class="nav-text">MVVM模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue指令"><span class="nav-number">1.4.</span> <span class="nav-text">vue指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#钩子函数"><span class="nav-number">1.5.</span> <span class="nav-text">钩子函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class与style绑定"><span class="nav-number">1.6.</span> <span class="nav-text">class与style绑定</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
