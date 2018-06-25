@@ -234,6 +234,215 @@
             
               
                 
+                <a class="post-title-link" href="/2018/06/25/数组-字符串-对象的方法-md/" itemprop="url">
+                  数组 字符串 函数方法.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-06-25T16:12:14+08:00" content="2018-06-25">
+              2018-06-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/06/25/数组-字符串-对象的方法-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/25/数组-字符串-对象的方法-md/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组-字符串-对象的基本方法"><a href="#数组-字符串-对象的基本方法" class="headerlink" title="数组 字符串 对象的基本方法"></a>数组 字符串 对象的基本方法</h1><h2 id="字符串的基本方法"><a href="#字符串的基本方法" class="headerlink" title="字符串的基本方法"></a>字符串的基本方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">length 获取字符串的长度</span><br><span class="line">prototype 用来给对象添加属性和方法，并且添加的属性或方法在所有实例上共享</span><br><span class="line">charAt() stringObject.charAt(index)  用来获取指定位置的字符串，index为字符串索引值，若不在这个范围将返回一个空字符串</span><br><span class="line">charCodeAt() stringObject.charCodeAt(index)</span><br><span class="line">charCodeAt()可以返回指定位置的字符Unicode编码，charCodeAt()方法与charAt()方法类似，都需要传入一个索引值作为参数区别是前者返回的指定位置的字符编码，后者返回指定位置的字符子串</span><br><span class="line">fromCharCode() 可接受一个或多个Unicode值，然后返回一个字符串，另外该方法是String的静态方法，字符串中的每个字符都有单独的数字Unicode编码指定 String.fromCharCode(num1,num2,num3)</span><br><span class="line">查找类方法</span><br><span class="line">indexOf() stringObject.indexOf(searchvalue,fromindex) 用来检索指定字符串值在字符串中首次出现的位置，它可以接收两个参数，searchvlue表示要查找的子字符串，fromindex表示查找开始位置，省略的话则从开始位置进行检索</span><br><span class="line">lastIndexOf()与indexOf()类似，返回的是一个指定字符串值最后出现的位置，其检索顺序是从后向前</span><br><span class="line">search（）  stringObject.search(substr)  stringObject.search(regexp)  </span><br><span class="line">用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串，他会返回第一个子字符串的起始位置，如果没有匹配则返回-1  </span><br><span class="line">match()  stringObject.match(substr)  stringObject.match(regexp)</span><br><span class="line">在字符串内检索指定的值，或找到一个或多个正则表达式匹配如果参数中传入的是子字符串或是没有进行全局匹配的正则表达式，那么match()方法会从开始位置执行一次匹配，如果没有匹配到结果，则返回null。否则则会返回一个数组，该数组的第0个元素存放的是匹配文本，除此之外，返回的数组还含有两个对象属性index和input，分别表示匹配文本的起始字符索引和stringObject 的引用(即原字符串)。</span><br><span class="line">截取类方法</span><br><span class="line">substring() stringObject.substring(start,end)是最长用到的字符串截取方法，他可以接收两个参数，参数不能为负，分别要截取的开始位置和结束位置他将返回一个新的字符串，其内容是从start到end-1处的所有字符，若结束参数end省略，则表示start位置一直截取到最后  </span><br><span class="line">slice()  stringObject.slice(start,end) 与substring()方法类似，区别在于该方法的参数可以为负，该参数规定的是从字符串的为尾部开始算起的位置，也就是说-1指字符串的最后一个字符</span><br><span class="line">substr() stringObject.substr(start,length)  </span><br><span class="line">该方法可在字符串中抽取从start下标开始的指定数目的字符，其返回值为一个字符串包含从start处开始的length个字符，如果没有指定length则返回的字符串包括从start到stringObject的结尾的字符，如果start为负数则表示从字符串尾部开始算起  </span><br><span class="line">其他方法  </span><br><span class="line">replace() stringObject.replace(regexp/substr,replacement);</span><br><span class="line">用来进行字符串替换操作，他可以接收两个参数前者为被替换的子字符串，后者为用来替换的文本 </span><br><span class="line">split() stringObject.split(separator,howmany)  </span><br><span class="line">该方法用于把一个字符串分割成字符串数组，第一个参数表示分割位置，第二个参数表示返回数组的允许最大长度  </span><br><span class="line">toLowerCase()和toUpperCase()  </span><br><span class="line">第一个方法用于把字符串中的大写字母转换为小写。第二个用于把小写字母转化为大写</span><br></pre></td></tr></table></figure>
+<h2 id="数组的基本方法"><a href="#数组的基本方法" class="headerlink" title="数组的基本方法"></a>数组的基本方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">instanceof 方法，返回一个布尔值，在一个网页包含多个框架</span><br><span class="line">Array.isArray(arr) 也是返回一个布尔值</span><br><span class="line">Array.prototype.toString 返回一个字符串</span><br><span class="line">Array.prototype.valueOf 返回对象的原始值</span><br><span class="line">Array.prototype.toLocaleString 返回一个字符串表示数组中的元素，和toString类似，不过每个元素都会调用自己的toLocaleString</span><br><span class="line">Array.prototype.join 将数组的所有元素连接到一个字符串中，不会改变原数组</span><br><span class="line">栈方法  </span><br><span class="line">Array.prototype.push 将一个或多个元素添加到数组的末尾，并返回数组的新长度</span><br><span class="line">Array.prototype.pop 删除数组中最后一个元素，并返回该元素，此方法会改变源数组</span><br><span class="line">队列方法</span><br><span class="line">Array.prototype.shift 删除数组中第一个元素，并返回元素的值，此方法会更改元素组</span><br><span class="line">Array.prototype.unshift 将一个或多个元素添加到数组的开头，并返回新数组的长度</span><br><span class="line">重排序方法</span><br><span class="line">Array.prototype.reverse 将数组中元素的位置颠倒</span><br><span class="line">Array.prototype.sort 在适当的位置对数组的元素进行排序，并返回数组</span><br><span class="line">操作方法</span><br><span class="line">Array.prototype.concat 用于合并两个或多个数组，此方法不会更改现有数组，而是返回一个新数组</span><br><span class="line">Array.prototype.slice 返回一个从开始到结束不包括结束，选择数组的一部分浅拷贝到一个新数组对象，源数组不会修改</span><br><span class="line">Array.prototype.splice通过删除现有元素或添加新元素来更改一个数组的内容</span><br><span class="line">Array.prototype.indexOf返回在数组中可以找到一个给定元素的第一个索引，如果不存在则返回-1</span><br><span class="line">Array.prototype.lastIndexOf 和indexOf功能类似，只是从数组的后面向前查找</span><br><span class="line">迭代方法</span><br><span class="line">Array.prototype.forEach 对数组的每个元素执行一次提供的函数</span><br><span class="line">Array.prototype.map 对数组的每个元素执行一次提供函数，返回每次函数调用的结果组成数组</span><br><span class="line">Array.prototype.filter 方法创建一个新数组，其中包含所提供函数实现的测试的所有元素</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript-创建对象的七种方法"><a href="#JavaScript-创建对象的七种方法" class="headerlink" title="JavaScript 创建对象的七种方法"></a>JavaScript 创建对象的七种方法</h2><p>1， 工厂模式<br>工厂模式可以无数次调用这个工厂函数，每次都会返回一个包含两个属性和一个方法的对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function createPerson(name job) &#123;</span><br><span class="line">    var 0 = new Object();</span><br><span class="line">    o.name = name;</span><br><span class="line">    o.job = job;</span><br><span class="line">    o.sayName = function()&#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">    return o</span><br><span class="line">&#125;</span><br><span class="line">var person1=createPerson(&apos;liu&apos;,&apos;student&apos;);</span><br><span class="line">var person2=createPerson(&apos;xiaoxiao&apos;,&apos;intenet&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>工厂模式虽然解决了创建多个相似对象的问题，但是没有解决对象识别问题，即不能知道一个对象的类型<br>2，构造函数模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person(name job) &#123;</span><br><span class="line">  this.name = name;</span><br><span class="line">  this.job = job;</span><br><span class="line">  this.sayName = function() &#123;</span><br><span class="line">  console.log(this.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person(&apos;liu&apos;,&apos;student&apos;);</span><br><span class="line">var person2 = new Person(&apos;xiaoxiao&apos;,&apos;intenet&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>没有显示的创建对象，使用new来调用这个构造函数,使用new后会自动执行如下操作<br>创建一个新对象<br>这个新对象会绑定到函数调用this<br>返回这个对象<br>使用这个方法创建对象可以检测到对象的类型<br>3,原型模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.name=&apos;liu&apos;;</span><br><span class="line">Person.prototype.job=&apos;student&apos;;</span><br><span class="line">Person.prototype.sayName = function() &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line">var person1 = new Person();</span><br></pre></td></tr></table></figure></p>
+<p>将信息直接添加到原型对象上，使用原型的好处是可以让所有的实例对象共享他所包含的属性和方法，不必在构造函数中定义对象实例信息  </p>
+<h2 id="组合使用构造函数模式和原型模式"><a href="#组合使用构造函数模式和原型模式" class="headerlink" title="组合使用构造函数模式和原型模式"></a>组合使用构造函数模式和原型模式</h2><p>此方法是使用最广泛的类型方法，可以解决上面那些模式的缺点，可以让每个实例都有自己的一份实例属性副本，但同时又共享者对方法的引用，这样的话即使实例属性修改类型的值，也不会影响其他实例的属性了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function Person(name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.friends=[&apos;Shelby&apos;,&apos;Count&apos;];</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayName=function()&#123;</span><br><span class="line">    console.log(this.name)</span><br><span class="line">&#125;</span><br><span class="line">var person1=new Person();</span><br><span class="line">var person2=new Person();</span><br><span class="line">person1.friends.push(&apos;Van&apos;)</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/06/25/数组-字符串-函数方法-md/" itemprop="url">
+                  数组 字符串 函数方法.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2018-06-25T16:12:14+08:00" content="2018-06-25">
+              2018-06-25
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2018/06/25/数组-字符串-函数方法-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/25/数组-字符串-函数方法-md/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="数组-字符串-对象的基本方法"><a href="#数组-字符串-对象的基本方法" class="headerlink" title="数组 字符串 对象的基本方法"></a>数组 字符串 对象的基本方法</h1><h2 id="JavaScript-创建对象的七种方法"><a href="#JavaScript-创建对象的七种方法" class="headerlink" title="JavaScript 创建对象的七种方法"></a>JavaScript 创建对象的七种方法</h2><p>1， 工厂模式<br>工厂模式可以无数次调用这个工厂函数，每次都会返回一个包含两个属性和一个方法的对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function createPerson(name job) &#123;</span><br><span class="line">    var 0 = new Object();</span><br><span class="line">    o.name = name;</span><br><span class="line">    o.job = job;</span><br><span class="line">    o.sayName = function()&#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">    return o</span><br><span class="line">&#125;</span><br><span class="line">var person1=createPerson(&apos;liu&apos;,&apos;student&apos;);</span><br><span class="line">var person2=createPerson(&apos;xiaoxiao&apos;,&apos;intenet&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>工厂模式虽然解决了创建多个相似对象的问题，但是没有解决对象识别问题，即不能知道一个对象的类型</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2018/06/16/gank项目总结-md/" itemprop="url">
                   gank项目总结.md
                 </a>
@@ -1072,7 +1281,7 @@ b //1
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>

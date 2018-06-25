@@ -84,17 +84,17 @@
 
 
 
-<meta name="description" content="Document">
+<meta name="description" content="数组 字符串 对象的基本方法JavaScript 创建对象的七种方法1， 工厂模式工厂模式可以无数次调用这个工厂函数，每次都会返回一个包含两个属性和一个方法的对象1234567891011function createPerson(name job) &amp;#123;    var 0 = new Object();    o.name = name;    o.job = job;    o.say">
 <meta property="og:type" content="article">
-<meta property="og:title" content="My Blog">
-<meta property="og:url" content="http://yoursite.com/2018/06/03/1/index.html">
+<meta property="og:title" content="数组 字符串 函数方法.md">
+<meta property="og:url" content="http://yoursite.com/2018/06/25/数组-字符串-函数方法-md/index.html">
 <meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="Document">
+<meta property="og:description" content="数组 字符串 对象的基本方法JavaScript 创建对象的七种方法1， 工厂模式工厂模式可以无数次调用这个工厂函数，每次都会返回一个包含两个属性和一个方法的对象1234567891011function createPerson(name job) &amp;#123;    var 0 = new Object();    o.name = name;    o.job = job;    o.say">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-03T15:22:39.961Z">
+<meta property="og:updated_time" content="2018-06-25T09:00:10.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="My Blog">
-<meta name="twitter:description" content="Document">
+<meta name="twitter:title" content="数组 字符串 函数方法.md">
+<meta name="twitter:description" content="数组 字符串 对象的基本方法JavaScript 创建对象的七种方法1， 工厂模式工厂模式可以无数次调用这个工厂函数，每次都会返回一个包含两个属性和一个方法的对象1234567891011function createPerson(name job) &amp;#123;    var 0 = new Object();    o.name = name;    o.job = job;    o.say">
 
 
 
@@ -112,7 +112,7 @@
   };
 </script>
 
-  <title>  | My Blog </title>
+  <title> 数组 字符串 函数方法.md | My Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -232,7 +232,7 @@
             
             
               
-                
+                数组 字符串 函数方法.md
               
             
           </h1>
@@ -244,8 +244,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2018-06-03T23:22:17+08:00" content="2018-06-03">
-              2018-06-03
+            <time itemprop="dateCreated" datetime="2018-06-25T16:12:14+08:00" content="2018-06-25">
+              2018-06-25
             </time>
           </span>
 
@@ -255,8 +255,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2018/06/03/1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/03/1/" itemprop="commentsCount"></span>
+                <a href="/2018/06/25/数组-字符串-函数方法-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/06/25/数组-字符串-函数方法-md/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -279,18 +279,9 @@
       
 
       
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
-</html>
+        <h1 id="数组-字符串-对象的基本方法"><a href="#数组-字符串-对象的基本方法" class="headerlink" title="数组 字符串 对象的基本方法"></a>数组 字符串 对象的基本方法</h1><h2 id="JavaScript-创建对象的七种方法"><a href="#JavaScript-创建对象的七种方法" class="headerlink" title="JavaScript 创建对象的七种方法"></a>JavaScript 创建对象的七种方法</h2><p>1， 工厂模式<br>工厂模式可以无数次调用这个工厂函数，每次都会返回一个包含两个属性和一个方法的对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function createPerson(name job) &#123;</span><br><span class="line">    var 0 = new Object();</span><br><span class="line">    o.name = name;</span><br><span class="line">    o.job = job;</span><br><span class="line">    o.sayName = function()&#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">    return o</span><br><span class="line">&#125;</span><br><span class="line">var person1=createPerson(&apos;liu&apos;,&apos;student&apos;);</span><br><span class="line">var person2=createPerson(&apos;xiaoxiao&apos;,&apos;intenet&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>工厂模式虽然解决了创建多个相似对象的问题，但是没有解决对象识别问题，即不能知道一个对象的类型</p>
+
       
     </div>
 
@@ -314,16 +305,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/03/搭建博客心得-md/" rel="next" title="搭建博客心得.md">
-                <i class="fa fa-chevron-left"></i> 搭建博客心得.md
+              <a href="/2018/06/16/gank项目总结-md/" rel="next" title="gank项目总结.md">
+                <i class="fa fa-chevron-left"></i> gank项目总结.md
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/06/04/每天坚持写一篇学习总结-md/" rel="prev" title="每天坚持写一篇学习总结.md">
-                每天坚持写一篇学习总结.md <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/25/数组-字符串-对象的方法-md/" rel="prev" title="数组 字符串 函数方法.md">
+                数组 字符串 函数方法.md <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -431,7 +422,7 @@
               
             
             
-              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数组-字符串-对象的基本方法"><span class="nav-number">1.</span> <span class="nav-text">数组 字符串 对象的基本方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-创建对象的七种方法"><span class="nav-number">1.1.</span> <span class="nav-text">JavaScript 创建对象的七种方法</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -551,9 +542,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'liuxiaoxiao';
-      var disqus_identifier = '2018/06/03/1/';
-      var disqus_title = '';
-      var disqus_url = 'http://yoursite.com/2018/06/03/1/';
+      var disqus_identifier = '2018/06/25/数组-字符串-函数方法-md/';
+      var disqus_title = '数组 字符串 函数方法.md';
+      var disqus_url = 'http://yoursite.com/2018/06/25/数组-字符串-函数方法-md/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
